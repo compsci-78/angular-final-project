@@ -1,0 +1,24 @@
+<div class="row mt-5">
+    <div class="col">
+        <h6>Workouts</h6>
+        <div class="card p-1 shadow  overflow-auto">
+            <div style="height: 500px;">
+                <ul class="list-group list-group-light">
+                    <app-workout-list-item *ngFor="let workout of workouts "
+                        [workout]="workout" (workoutEmit)="onWorkoutClick($event)"></app-workout-list-item>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <h6>Details</h6>
+        <div class="card p-1 shadow  overflow-auto">
+            <div style="height: 500px;">
+                <ul class="list-group list-group-light">
+                    <app-workout-exercise-list-item *ngFor="let workoutExercise of workoutExercises "
+                        [workoutExercise]="workoutExercise"></app-workout-exercise-list-item>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

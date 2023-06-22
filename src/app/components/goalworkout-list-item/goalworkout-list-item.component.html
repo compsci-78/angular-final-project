@@ -1,0 +1,21 @@
+<li class="list-group-item px-3 border-2 rounded-3 list-group-item-secondary mb-2 p-0">
+    <div class="row">
+        <button class="btn btn-sm" type="button">
+            <div class="row">
+                <div class="col">
+                    <small> {{goalWorkout?.name}} </small> 
+                </div>
+                <div class="col">
+                    <small>{{goalWorkout?.type}}</small>
+                </div>
+                <div class="col">
+                    <small>{{goalWorkout?.status}}</small>                                        
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <button class="btn btn-sm btn-outline-success bi bi-check-square me-1" type="button" (click)="onChecked()"></button>
+                    <button class="btn btn-sm btn-outline-danger  bi bi-trash" type="button" (click)="onRemove()"></button>
+                </div>                
+            </div>
+        </button>
+    </div>
+</li>

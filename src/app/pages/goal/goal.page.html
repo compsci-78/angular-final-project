@@ -1,0 +1,56 @@
+<div class="row mt-5 ">
+    <div class="col">
+        <div class="row mb-2">
+            <ng-container *ngIf="goal"> 
+            <h6>Goal</h6>
+            <app-goal-form [goal]="goal" [workoutIds]="workoutIds" (formSubmitEmit)="onFormSubmit()" ></app-goal-form>
+            </ng-container> 
+        </div>
+        <h6>Goal workouts</h6>
+        <div class="card p-1 mb-1 shadow overflow-auto">
+        <div style="height: 300px;">
+                <ul class="list-group list-group-light">
+                    <app-goalworkout-list-item *ngFor="let goalWorkout of goalWorkouts "
+                        [goalWorkout]="goalWorkout" [goal]="goal" (goalWorkoutEmit)="onRemove()" (goalWorkoutCheckEmit)="onGoalWorkoutCheck()"></app-goalworkout-list-item>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="row mx-1">
+            <button class="btn btn-outline-secondary" type="button">Remove</button>
+        </div> -->
+    </div>
+    <div class="col">
+        <h6>Workouts to be added</h6>
+        <div class="card p-1 shadow overflow-auto mb-1">
+            <div style="height: 458px;">
+                <ul class="list-group list-group-light">
+                    <app-workout-list-item *ngFor="let workout of tempContainer "
+                        [workout]="workout"></app-workout-list-item>
+                </ul>
+            </div>
+        </div>
+        <div class="row mx-1 ">
+            <div class="col me-1">
+                <div class="row">
+                    <button class="btn btn-outline-secondary" type="button" (click)="onCleanClick()">Clean</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <button class="btn btn-outline-secondary " type="button"(click)="onAddClick()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h6>Workouts</h6>
+        <div class="card p-1 shadow  overflow-auto">
+            <div style="height: 500px;">
+                <ul class="list-group list-group-light">
+                    <app-workout-list-item *ngFor="let workout of workouts " [workout]="workout"
+                        (workoutEmit)="onWorkoutClick($event)"></app-workout-list-item>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

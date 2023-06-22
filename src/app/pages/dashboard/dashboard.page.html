@@ -1,0 +1,15 @@
+<div class="row mt-5 ">
+    
+    <div class="col">
+        <h6>List of goals</h6>
+        <div class="card p-1 shadow overflow-auto">
+            <ul class="list-group list-group-light">
+                <div style="height: 500px;">
+                    <app-goal-list-item *ngFor="let goal of goals" [goal]="goal"></app-goal-list-item>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="col-6"></div>
+</div>
+<p *ngIf="isLoading">Loading ...</p>

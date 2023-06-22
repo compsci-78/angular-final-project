@@ -1,0 +1,27 @@
+<form #goalForm="ngForm" class="" (ngSubmit)="formSubmit(goalForm)">
+  <div class="row form-group mb-1">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp1" [(ngModel)]="model1" ngbDatepicker 
+        #from="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary bi bi-calendar3" (click)="from.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+  <div class="row form-group mb-1">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp2" [(ngModel)]="model2" ngbDatepicker
+        #to="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary bi bi-calendar3" (click)="to.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+  <button class="form-control btn btn-outline-primary mb-1" type="submit">Save</button>
+  <button class="form-control btn btn-outline-primary" type="button" (click)="createGoal($event)">Create goal</button>
+</form>
+
+
+ <!-- <hr/>
+   <pre>Fra: {{ fromDate | json }}</pre> 
+  <pre>til: {{ toDate | json }}</pre>  -->
